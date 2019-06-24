@@ -25,6 +25,7 @@ app.get('/items', function (req, res) {
 });
 
 app.post('/splytBills', db.addExpense);
+app.delete('/splytBills/:id', db.deleteExpense);
 
 app.listen(3000, function() {
   console.log('listening on port 3000!');

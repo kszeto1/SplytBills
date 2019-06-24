@@ -32,9 +32,24 @@ var addExpense = function(req, res) {
   })
 }
 
+var deleteExpense = function(req, res) {
+  console.log('req body delete', req.params);
+  const debt_id = parseInt(req.params.id);
+  console.log('debt_id db', typeof debt_id);
+  const query = 'DELETE FROM debt WHERE debt_id = ?;'
+  connection.query(query, [debt_id], (error, result) => {
+    if (error) {
+      throw error;
+    } else {
+      res.status(200).send('expense deleted!!');
+    }
+  })
+}
+
 module.exports = {
   selectAll,
   connection,
-  addExpense
+  addExpense,
+  deleteExpense
 }
 

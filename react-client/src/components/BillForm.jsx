@@ -58,7 +58,7 @@ class BillForm extends React.Component {
             <input type="text" name="borrower" id="borrower" onChange={this.handleInputChange} required />
           </div>
           <div className="form-example">
-            <input type="submit" value="Subscribe!" />
+            <input type="submit" value="Add expense" />
           </div>
         </form>
       </div>

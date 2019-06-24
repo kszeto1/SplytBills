@@ -20,6 +20,7 @@ class App extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleAddBill = this.handleAddBill.bind(this);
     this.getExpenses = this.getExpenses.bind(this);
+    this.deleteExpense = this.deleteExpense.bind(this);
   }
 
   getExpenses() {
@@ -55,7 +56,7 @@ class App extends React.Component {
   }
 
   handleAddBill(newExpense) {
-    console.log('client new expense', newExpense);
+    // console.log('client new expense', newExpense);
     Axios.post('/splytBills', newExpense)
       .then((res) => {
         this.getExpenses();
@@ -65,9 +66,21 @@ class App extends React.Component {
       })
   }
 
+  deleteExpense(debtId) {
+    console.log('debtId client', debtId);
+    const debt_id = parseInt(debtId.debt_id);
+    Axios.delete('/splytBills/' + debt_id)
+    .then((res) => {
+      this.getExpenses();
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
+
   render () {
     //TODO: conditionally render userlogin and list components
-    console.log('state', this.state);
+    // console.log('state', this.state);
     const isLoggedIn = this.state.isLoggedIn;
     if (this.state.expenses.length === 0) {
       return <div></div>
@@ -77,7 +90,7 @@ class App extends React.Component {
       {isLoggedIn ? (
         <div>
           <h1>Expenses List</h1>
-          <List username={this.state.username} expenses={this.state.expenses} handleAddBill={this.handleAddBill}/>
+          <List username={this.state.username} expenses={this.state.expenses} handleAddBill={this.handleAddBill} handleDeleteBill={this.deleteExpense}/>
         </div>
         ) : (
           <UserLogin handleLogin={this.handleLoginSubmit} handleInputChange={this.handleInputChange} />
