@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/test', {useMongoClient: true});
 
 var db = mongoose.connection;
 
@@ -28,4 +28,8 @@ var selectAll = function(callback) {
   });
 };
 
+// user schema
+  // username
+  // shared bills
+  // 
 module.exports.selectAll = selectAll;

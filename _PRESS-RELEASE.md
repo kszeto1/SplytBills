@@ -18,27 +18,31 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
-
+[PLACEHOLDER] gives people their time back, makes splitting the bill hassle-free.
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-
+[PLACEHOLDER] simplifies process of splitting bills between friends.
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-
+[PLACEHOLDER] is now available to customers. [PLACEHOLDER] allows customers to easily input a bill and easily share expenses with friends and provides a user interface to view all of customer's expenses. 
 ## Problem ##
   > Describe the problem your product solves.
-
+Organizing shared expenses gets difficult to keep track. Forgetting who owes a shared expense means not getting paid back.
 ## Solution ##
   > Describe how your product elegantly solves the problem.
-
+A user dashboard that organizes all shared expenses that a user has assigned to friends. Customers can keep track of how much and who pays back for each expense.
 ## Quote from You ##
   > A quote from a spokesperson in your company.
-
+"Getting paid back for their time to enjoy life and not have to worry about IOUs" - Kenny S., CEO
 ## How to Get Started ##
   > Describe how easy it is to get started.
-
+Getting started is easy!
+1. Login with a username
+2. Start adding bills and sharing to your friends
+3. View all your bills and expenses owed
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-
+"[PLACEHOLDER] nearly automated splitting the bill, and gave me my life back. Now I spend more time enjoying life!" - customer
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  https://github.com/kszeto1/hrsf116-mvp-starter

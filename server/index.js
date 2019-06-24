@@ -1,20 +1,21 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-// UNCOMMENT THE DATABASE YOU'D LIKE TO USE
-// var items = require('../database-mysql');
+var db = require('../database-mysql');
 // var items = require('../database-mongo');
 
+db.connection.connect();
 var app = express();
 
-// UNCOMMENT FOR REACT
-// app.use(express.static(__dirname + '/../react-client/dist'));
-
-// UNCOMMENT FOR ANGULAR
-// app.use(express.static(__dirname + '/../angular-client'));
-// app.use(express.static(__dirname + '/../node_modules'));
+app.use(
+	bodyParser.urlencoded({
+		extended: false
+	})
+);
+app.use(bodyParser.json());
+app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.get('/items', function (req, res) {
-  items.selectAll(function(err, data) {
+  db.selectAll(function(err, data) {
     if(err) {
       res.sendStatus(500);
     } else {
@@ -22,6 +23,8 @@ app.get('/items', function (req, res) {
     }
   });
 });
+
+app.post('/splytBills', db.addExpense);
 
 app.listen(3000, function() {
   console.log('listening on port 3000!');
